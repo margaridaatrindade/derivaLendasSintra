@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Interativo</title>
+  <link href="https://fonts.cdnfonts.com/css/luminari" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="mpm.js"></script>
+  <script>
+    // Chama a função initMap() após o carregamento completo do DOM
+    document.addEventListener("DOMContentLoaded", function() {
+        initMap();
+    });
+  </script>
+              
+</head>
+<body>
+  <nav>
+    <ul style="height: 100%; display: flex; justify-content: center; align-items: center;">
+      <li style="font-size: 50px;">Deriva das Lendas | Sintra</li>
+    </ul>
+  </nav>
+
+  <div id="map">
+    <div id="marker1" class="marker"></div>
+    <div id="marker2" class="marker"></div>
+    <div id="marker3" class="marker"></div>
+    <div id="marker4" class="marker"></div>
+    <div id="marker5" class="marker"></div>
+    <div id="marker6" class="marker"></div>
+    <div id="marker7" class="marker"></div>
+    <div id="marker8" class="marker"></div>
+    <div id="marker9" class="marker"></div>
+    <div id="marker10" class="marker"></div>
+    <div id="marker11" class="marker"></div>
+    <div id="marker12" class="marker"></div>
+    <div id="marker13" class="marker"></div>
+    <div id="marker14" class="marker"></div>
+  </div>
+
+
+  <svg id="line" style="position: absolute; width: 100vw; height: 100vh;z-index: -1;">
+    <line id="connector" x1="0" y1="0" x2="0" y2="0" style="stroke:rgb(255,0,0);stroke-width:2" />
+  </svg>
+  
+
+  <div class="square">
+    <img src="img/explorador.png" alt="" width="190" height="auto">
+  </div> 
+
+  <div class="square2">
+    <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><b>Trabalho realizado por:</b> Margarida Trindade</p>
+  </div> 
+
+  <div class="square3">
+    <button style="margin-top: 280px;" onclick="openPopup1()">Regra</button>
+    <button onclick="openPopup2()">Porquê esta regra?</button>
+    <button onclick="openPopup3()">Como funciona</button>
+    <button><a href="paragens.html" id="referencias">Paragens</a></button>
+    <button id="ver-caminho">Ver caminho</button>
+    <button><a href="https://linktr.ee/fc58615" id="referencias">Referências</a></button>
+  </div>
+
+  <!-- Div do pop-up da regra-->
+  <div id="popup1" class="popup1">
+      <span class="popup-close" onclick="closePopup1()">x</span>
+      <h2 id="titulo-pop-up">Regra</h2>
+      <p><b>Deriva das Lendas e Mistérios</b> – 14 locais associados a lendas de Sintra.<br><br>
+        Tive o cuidado de escolher lendas que estão associadas a um local especifico. Há lendas em Sintra que estão associadas a uma zona grande e não a um lugar concreto mas tive cuidado e atenção para não escolher essas. <br><br>
+        <b>Definir o caminho:</b> Para determinar o meu caminho, eu tinha 14 papéis com os diferentes locais no bolso. Em cada paragem, retirava um papel, e o local escrito nele determinava a minha próxima paragem. <br><br>
+        <b>Objetivo:</b> Falar sobre o folclore e o imaginário popular da região, e o impacto destas lendas na história e turismo em Sintra.</p><br>
+  </div>
+
+  <!-- Div do pop-up do porque esta regra-->
+  <div id="popup2" class="popup2">
+    <span class="popup-close" onclick="closePopup2()">x</span>
+    <h2 id="titulo-pop-up">Porque escolhi esta regra?</h2>
+    <p>Vivo em <b>Sintra</b> e sempre me fascinou a sua rica <b>história, repleta de mistérios e intrigas</b>. Ao longo dos anos, esta vila testemunhou eventos que moldaram não apenas a história local, mas também a de Portugal. No entanto, uma das coisas que torna Sintra tão especial e intrigante é as suas <b>lendas</b>.  <br><br> 
+      Sintra é famosa pelas suas lendas que envolvem os seus <b>palácios majestosos, castelos antigos e paisagens naturais deslumbrantes</b>. Essas lendas capturam a imaginação dos visitantes e adicionam uma camada de mistério e romance à já deslumbrante paisagem de Sintra.<br><br>
+      As lendas de Sintra abrangem uma variedade de temas, desde histórias de amor trágico até contos de fantasmas e figuras misteriosas. Muitos dos palácios, como o Palácio Nacional de Sintra e a Quinta da Regaleira, têm as suas próprias <b>lendas únicas</b> que contam histórias de reis e rainhas, amores proibidos e segredos ocultos. Além dos palácios, os pontos turísticos naturais de Sintra também estão envolvidos em lendas intrigantes. Locais como o Cabo da Roca, o ponto mais ocidental da Europa continental, e o Penedo dos ovos, são palcos de histórias sobre tesouros perdidos e eventos sobrenaturais.
+      Essas lendas não só adicionam um elemento de magia à experiência de visitar Sintra, mas também refletem a <b>rica história</b> e <b>cultura da região</b>. Elas são uma parte essencial do encanto e da história deste local único em Portugal.<br><br>
+      Com este projeto, tive a oportunidade de explorar e saber mais sobre essas lendas visitando os locais associados a esses mistérios. Tive <b>cuidado em me informar bem</b>, isto é, realizei várias pesquisas, visitei vários lugares ligados às mesmas e examinei os textos e obras lá. Foi importante para mim fazer isso para entender melhor e contar essas histórias da melhor maneira. Sendo habitante de Sintra, já conhecia muitas das lendas e acho que estes mistérios são o que tornam Sintra tão interessante e especial. <br><br>
+      Com esta regra pude colocar algo da minha <b>identidade</b> neste projeto, pois sou habitante de Sintra e quero sempre saber mais, e pude explorar lugares novos e descobrir novas coisas sobre locais que visito várias vezes.
+      </p>
+  </div>
+
+  <!-- Div do pop-up de como funciona-->
+  <div id="popup3" class="popup3">
+    <span class="popup-close" onclick="closePopup3()">x</span>
+    <h2 id="titulo-pop-up">Como funciona</h2>
+    <p>
+      Para apresentar este projeto e a minha deriva, decidi criar esta plataforma. Vou explicar sucintamente como funciona:
+<br>
+      Na plataforma, temos um mapa da Serra de Sintra, que foi a área realizei a deriva. Neste mapa, encontram-se <b>14 alfinetes numerados</b>, representando os locais visitados durante a minha deriva. Ao clicar em cada alfinete, será redirecionado para uma página contendo um <b>vídeo sobre o local e a lenda associada a ele</b>. Após assistir ao vídeo, basta clicar no botão "Voltar" para regressar à página inicial. Repita este processo para assistir aos 14 vídeos correspondentes aos locais visitados.
+<br><br>
+      Do lado esquerdo do ecrã na página inicial, temos 6 botões:
+      <ul>
+        <li><b>Botão "Regra":</b> Ao clicar neste botão, aparecerá um pop-up que explica a regra aplicada nesta deriva, o seu objetivo e como o percurso foi definido. Para fechar o pop-up, clique no "X" no canto superior direito.</li>
+        <li><b>Botão "Porquê esta regra?":</b> Ao clicar neste botão, aparecerá um pop-up que explica por que escolhi esta regra específica. Para fechar o pop-up, clique no "X" no canto superior direito.</li>
+        <li><b>Botão "Como funciona":</b> Ao clicar neste botão, aparecerá este pop-up que explica como funciona esta plataforma da deriva. Para fechar o pop-up, clique no "X" no canto superior direito.</li>
+        <li><b>Botão "Paragens":</b> Ao clicar neste botão, será encaminhado para uma página que mostra a ordem das paragens, os locais visitados e as lendas associadas a cada um deles. Além disso, haverá uma montagem de fotografias, uma de cada paragem, onde eu apareço com o local no fundo, representando o número da paragem com as mãos (por exemplo, dois dedos levantados para a paragem 2). Após visualizar a lista, clique no botão "Voltar" para regressar à página inicial.</li>
+        <li><b>Botão "Ver caminho":</b> Ao clicar neste botão, o caminho percorrido durante a deriva será exibido no mapa, e o texto do botão mudará para "Ocultar caminho". Para desativar a visualização do caminho, clique novamente no botão. Sempre que quiser visualizar o caminho, basta clicar em "Ver caminho".</li>
+        <li><b>Botão "Referências":</b> Ao clicar neste botão, será encaminhado para o Linktree que lista todos os sites consultados para a pesquisa durante a deriva, bem como as músicas usadas como músicas de fundo nos vídeos dos locais visitados.</li>
+      </ul>
+
+    </p>
+  </div>
+
+  
+</body>
+</html>
+
