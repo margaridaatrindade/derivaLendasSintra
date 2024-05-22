@@ -1,0 +1,398 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+
+#map {
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+    background-image: url('img/mapa.png'); 
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden; 
+}
+
+
+.marker {
+    position: absolute;
+    width: 45px; 
+    height: 45px; 
+    background-size: cover; 
+    cursor: pointer;
+}
+
+.marker:hover {
+    transform: scale(1.2);
+}
+
+#marker1 { /*Santa Eufémia*/
+    top: 408px;
+    left: 1223px;
+    background-image: url('img/pin1.png');
+}
+
+#marker2 {  /*Palácio Nacional da Pena*/
+    top: 400px;
+    left: 1176px;
+    background-image: url('img/pin2.png');
+}
+
+#marker3 { /*Palácio de Monserrate*/
+    top: 328px;
+    left: 906px;
+    background-image: url('img/pin3.png');
+}
+
+#marker4 { /*Cabo da Roca*/
+    top: 476px; 
+    left: 240px; 
+    background-image: url('img/pin4.png');
+}
+
+#marker5 { /*Convento dos Capuchos*/
+    top: 434px;
+    left: 760px;
+    background-image: url('img/pin5.png');
+}
+
+#marker6 { /*Capela de Nossa Senhora da Peninha*/
+    top: 612px;
+    left: 563px;
+    background-image: url('img/pin6.png');
+}
+
+#marker7 {  /*Castelo dos Mouros*/
+    top: 343px;
+    left: 1185px;
+    background-image: url('img/pin7.png');
+}
+
+#marker8 {  /*Quinta da Regaleira*/
+    top: 300px;
+    left: 1123px;
+    background-image: url('img/pin8.png');
+}
+
+#marker9 {  /*Palácio e Parque Biester*/
+    top: 337px;
+    left: 1138px;
+    background-image: url('img/pin9.png');
+}
+
+#marker10 {  /*Penedo dos ovos*/
+    top: 638px;
+    left: 1135px;
+    background-image: url('img/pin10.png');
+}
+
+#marker11 {  /*Av. Conde Sucena */
+    top: 378px;
+    left: 1297px;
+    background-image: url('img/pin11.png');
+}
+
+#marker12 {  /*Quinta da Ribafria*/
+    top: 102px;
+    left: 1268px;
+    background-image: url('img/pin12.png');
+}
+
+#marker13 { /*Palácio Nacional de Sintra*/
+    top: 286px;
+    left: 1165px;
+    background-image: url('img/pin13.png');
+}
+
+#marker14 { /*Palácio de Seteais*/
+    top: 303px;
+    left: 1100px;
+    background-image: url('img/pin14.png');
+}
+
+nav {
+    background-image: url('img/pergaminho.jpg');
+    width: 100%; 
+    height: 82px;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+    border: 2px solid rgba(0, 0, 0, 0.2); 
+    font-family: 'Luminari', sans-serif;
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    line-height: 60px; 
+}
+
+nav ul li {
+    display: inline-block; 
+    margin-right: 20px; 
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none; 
+    padding: 15px;
+    display: block; 
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+#referencias {
+    color: black; 
+    text-decoration: none;
+}
+
+#referencias:hover {
+    text-decoration: none; 
+}
+
+#referencias:visited {
+    color: black;
+}
+
+
+.square {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 208px; 
+    height: 150px; 
+    background-image: url('img/pergaminho.jpg');
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 15px 30px rgba(0.5, 0.5, 0.5, 0.7); 
+    border: 2px solid rgba(0, 0, 0, 0.2); 
+    z-index: 1;
+    border-radius: 5px;
+}
+
+
+.square2 {
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    width: 500px; 
+    height: 25px; 
+    background-image: url('img/pergaminho.jpg');
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 15px 30px rgba(0.5, 0.5, 0.5, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.2); 
+}
+
+.square3 {
+    position: fixed;
+    bottom: 150px;
+    left: 0px;
+    width: 140px; 
+    height: 100%;
+    background-image: url('img/pergaminho.jpg');
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 15px 30px rgba(0.5, 0.5, 0.5, 0.7); 
+    border: 2px solid rgba(0, 0, 0, 0.2); 
+    z-index: 0;
+    padding: 10px;
+}
+
+.square3 button {
+    width: 90%; 
+    height: 60px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    border-color: black;
+    font-family: 'Luminari', sans-serif;
+    font-size: 15px;
+}
+
+.popup1 {
+    display: none;
+    position: fixed; 
+    width: 900px;
+    height: 300px;
+    top: 54%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-image: url('img/pergaminho.jpg');
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.popup2 {
+    display: none; 
+    position: fixed; 
+    width: 900px;
+    height: 360px;
+    top: 54%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-image: url('img/pergaminho.jpg');
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.popup3 {
+    display: none; 
+    position: fixed; 
+    width: 900px;
+    height: 400px;
+    top: 54%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-image: url('img/pergaminho.jpg');
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.popup4 {
+    display: none; 
+    position: fixed; 
+    width: 1100px;
+    height: 500px;
+    top: 54%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-image: url('img/pergaminho.jpg');
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.popup5 {
+    display: none; 
+    position: fixed;
+    width: 900px;
+    height: 300px;
+    top: 54%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-image: url('img/pergaminho.jpg');
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+#titulo-pop-up {
+    font-family: 'Luminari', sans-serif;
+}
+
+
+.center-div {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.center-div2 {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    height: 85vh;
+    width: 77%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+  #div1 {
+    flex: 1;
+    padding-right: 20px; 
+  }
+
+  #div2 {
+    flex: 1;
+    padding-top: 40px;
+  }
+
+.square4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#titulo_paragens {
+    font-family: 'Luminari', sans-serif;
+    text-align: center;
+}
+
+.square5 {
+    position: fixed;
+    top: 10px;
+    left: 5px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 0;
+    padding: 10px;
+}
+
+.square5 button {
+    width: 100px; 
+    height: 50px;
+    border-radius: 3px;
+    border-color: black;
+    font-family: 'Luminari', sans-serif;
+    font-size: 15px;
+}
